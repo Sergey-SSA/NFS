@@ -1,7 +1,4 @@
 # NFS
->sur@sur-desktop:~/nfs/NFS$ vagrant up
-
-```
 Bringing machine 'server' up with 'virtualbox' provider...
 Bringing machine 'client' up with 'virtualbox' provider...
 ==> server: You assigned a static IP ending in ".1" to this machine.
@@ -14,7 +11,7 @@ Bringing machine 'client' up with 'virtualbox' provider...
 ==> server: This is very often used by the router and can cause the
 ==> server: network to not work properly. If the network doesn't work
 ==> server: properly, try changing this IP.
-==> server: Setting the name of the VM: NFS_server_1590751523280_33019
+==> server: Setting the name of the VM: NFS_server_1590752849706_66763
 ==> server: Clearing any previously set network interfaces...
 ==> server: Preparing network interfaces based on configuration...
     server: Adapter 1: nat
@@ -86,7 +83,7 @@ server                     : ok=8    changed=8    unreachable=0    failed=0
 
 ==> client: Importing base box 'centos/7'...
 ==> client: Matching MAC address for NAT networking...
-==> client: Setting the name of the VM: NFS_client_1590751571236_65082
+==> client: Setting the name of the VM: NFS_client_1590752897322_90828
 ==> client: Fixed port collision for 22 => 2222. Now on port 2200.
 ==> client: Clearing any previously set network interfaces...
 ==> client: Preparing network interfaces based on configuration...
@@ -135,13 +132,14 @@ TASK [nfs-client : install autofs] *********************************************
 changed: [client]
 
 TASK [nfs-client : copy autofs share config] ***********************************
-An exception occurred during task execution. To see the full traceback, use -vvv. The error was:        /home/sur/nfs/NFS/files/etc/auto.master.d/share.autofs
-fatal: [client]: FAILED! => {"changed": false, "msg": "Could not find or access 'files/etc/auto.master.d/share.autofs'\nSearched in:\n\t/home/sur/nfs/NFS/roles/nfs-client/files/etc/auto.master.d/share.autofs\n\t/home/sur/nfs/NFS/roles/nfs-client/tasks/files/etc/auto.master.d/share.autofs\n\t/home/sur/nfs/NFS/files/etc/auto.master.d/share.autofs"}
-        to retry, use: --limit @/home/sur/nfs/NFS/provision.retry
+changed: [client]
+
+TASK [nfs-client : copy autofs map for share folder] ***************************
+changed: [client]
+
+RUNNING HANDLER [nfs-client : restart autofs] **********************************
+changed: [client]
 
 PLAY RECAP *********************************************************************
-client                     : ok=2    changed=2    unreachable=0    failed=1
+client                     : ok=5    changed=5    unreachable=0    failed=0
 
-Ansible failed to complete successfully. Any error output should be
-visible above. Please fix these errors and try again.
-```
