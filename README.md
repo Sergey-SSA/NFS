@@ -1,6 +1,7 @@
 # NFS
+>sur@sur-desktop:~/nfs/NFS$ vagrant up
+
 ```
-sur@sur-desktop:~/nfs/NFS$ vagrant up
 Bringing machine 'server' up with 'virtualbox' provider...
 Bringing machine 'client' up with 'virtualbox' provider...
 ==> server: You assigned a static IP ending in ".1" to this machine.
