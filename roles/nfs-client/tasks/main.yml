@@ -1,0 +1,23 @@
+---
+- name: Creates directory to mount
+  file:
+    path: /var/share
+    state: directory
+    mode: 777
+
+- name: install autofs
+  yum:
+    name: autofs
+    state: present
+
+- name: copy autofs share config
+  copy:
+    dest: /etc/auto.master.d/share.autofs
+    src: files/etc/auto.master.d/share.autofs
+  notify: restart autofs
+
+- name: copy autofs map for share folder
+  copy:
+    dest: /etc/auto.share
+    src: files/etc/auto.share
+  notify: restart autofs
