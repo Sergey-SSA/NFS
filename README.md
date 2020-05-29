@@ -1,4 +1,7 @@
 # NFS
+>sur@sur-desktop:~/nfs/NFS$ vagrant up
+
+```
 Bringing machine 'server' up with 'virtualbox' provider...
 Bringing machine 'client' up with 'virtualbox' provider...
 ==> server: You assigned a static IP ending in ".1" to this machine.
@@ -142,4 +145,5 @@ changed: [client]
 
 PLAY RECAP *********************************************************************
 client                     : ok=5    changed=5    unreachable=0    failed=0
+```
 
